@@ -106,6 +106,17 @@ namespace Vector3D_AlgebraOperation
 
         }
 
+        /// <summary>
+        /// Dot Product of two vectors
+        /// </summary>
+        /// <param name="v1">vector input</param>
+        /// <param name="v2">vector input</param>
+        /// <returns></returns>
+        public static double DotProduct(Vector3D v1, Vector3D v2)
+        {
+            return v1.X * v2.X + v1.Y * v2.Y + v1.Z * v2.Z;
+        }
+
     }
 
 }

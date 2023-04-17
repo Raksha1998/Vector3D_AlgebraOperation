@@ -99,5 +99,22 @@ namespace Vector3D_AlgeOpr_Test
         }
 
 
+        /// <summary>
+        /// Unit test for dot product of two vector
+        /// </summary>
+        [TestMethod]
+        public void TestDotProd()
+        {
+            //Arrange
+            double dotprod_expected = 14;
+
+            Vector3D v1 = new Vector3D(1, 2, 3);
+            Vector3D v2 = new Vector3D(1, 2, 3);
+            //Act
+            double dotprod_actual = Vector3D.DotProduct(v1, v2);
+
+            //Assert
+            Assert.AreEqual(dotprod_expected, dotprod_actual);
+        }
     }
 }
