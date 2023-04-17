@@ -33,6 +33,25 @@ namespace Vector3D_AlgebraOperation
         /// </summary>
         public void Reverse_Negate()
         { X = -X; Y = -Y; Z = -Z; }
+
+        /// <summary>
+        /// Addition of 2 vectors
+        /// </summary>
+        /// <param name="v1">input vector</param>
+        /// <param name="v2">input vector</param>
+        /// <returns>add input1 and input2</returns>
+        public static Vector3D addition(Vector3D v1, Vector3D v2)
+        {
+            double v3_x = v1.X + v2.X;
+            double v3_y = v1.Y + v2.Y;
+            double v3_z = v1.Z + v2.Z;
+
+            Vector3D v3 = new Vector3D(v3_x, v3_y, v3_z);
+
+            return v3;
+
+        }
+
     }
 
 }
