@@ -27,6 +27,12 @@ namespace Vector3D_AlgebraOperation
             Y = _y;
             Z = _z;
         }
+
+        /// <summary>
+        /// Reverse/Negate vector
+        /// </summary>
+        public void Reverse_Negate()
+        { X = -X; Y = -Y; Z = -Z; }
     }
 
 }
