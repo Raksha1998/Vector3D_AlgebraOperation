@@ -135,6 +135,22 @@ namespace Vector3D_AlgeOpr_Test
             Assert.AreEqual(cross_exp, cross_actual);
         }
 
+        /// <summary>
+        /// Unit test of length of a vector
+        /// </summary>
+        [TestMethod]
+        public void Test_Length()
+        {
+            //Arrange
+            Vector3D v_len = new Vector3D(0, 4, 3);
+            double length_Expected = 5;
+
+            //Act
+            double length_actual = v_len.Length;
+
+            //Assert
+            Assert.AreEqual(length_Expected, length_actual);
+        }
 
     }
 }

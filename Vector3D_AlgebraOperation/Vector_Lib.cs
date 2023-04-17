@@ -134,6 +134,23 @@ namespace Vector3D_AlgebraOperation
             return v3;
         }
 
+        /// <summary>
+        /// Length of Vector
+        /// </summary>       
+        public double Get_Length()
+        {
+            double sqlength = X * X + Y * Y + Z * Z;
+            double length = Math.Sqrt(sqlength);
+            return length;
+        }
+        public double Length
+        {
+            get
+            {
+                return Get_Length();
+            }
+        }
+
     }
 
 }
