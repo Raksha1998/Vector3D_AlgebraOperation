@@ -117,6 +117,23 @@ namespace Vector3D_AlgebraOperation
             return v1.X * v2.X + v1.Y * v2.Y + v1.Z * v2.Z;
         }
 
+        /// <summary>
+        /// Cross Product of two vector
+        /// </summary>
+        /// <param name="v1">vector input</param>
+        /// <param name="v2">vector input</param>
+        /// <returns>perpendicular vector</returns>
+        public static Vector3D CrossProduct(Vector3D v1, Vector3D v2)
+        {
+            double v3_x = v1.Y * v2.Z - v1.Z * v2.Y;
+            double v3_y = v1.Z * v2.X - v1.X * v2.Z;
+            double v3_z = v1.X * v2.Y - v1.Y * v2.X;
+
+            Vector3D v3 = new Vector3D(v3_x, v3_y, v3_z);
+
+            return v3;
+        }
+
     }
 
 }

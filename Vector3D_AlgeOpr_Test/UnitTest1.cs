@@ -116,5 +116,25 @@ namespace Vector3D_AlgeOpr_Test
             //Assert
             Assert.AreEqual(dotprod_expected, dotprod_actual);
         }
+
+        /// <summary>
+        /// Unit test for Cross Product of two vector
+        /// </summary>
+        [TestMethod]
+        public void TestCrossProduct()
+        {
+            //Arrange
+            Vector3D v0 = new Vector3D(1, 0, 0);
+            Vector3D v1 = new Vector3D(0, 1, 0);
+            Vector3D cross_exp = new Vector3D(0, 0, 1);
+
+            //Act
+            Vector3D cross_actual = Vector3D.CrossProduct(v0, v1);
+
+            //Assert
+            Assert.AreEqual(cross_exp, cross_actual);
+        }
+
+
     }
 }
