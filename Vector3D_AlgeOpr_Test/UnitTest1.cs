@@ -151,6 +151,62 @@ namespace Vector3D_AlgeOpr_Test
             //Assert
             Assert.AreEqual(length_Expected, length_actual);
         }
+        /// <summary>
+        /// Unit test for Angle between two vector
+        /// </summary>
+        [TestMethod]
+
+        public void Test_getangle()
+        {
+            //Arrange
+            double angle_expected = 33.21091076089908;
+            Vector3D v1 = new Vector3D(2, -1, 3);
+            Vector3D v2 = new Vector3D(2, 0, 1);
+
+            //Act
+            double angle_actual = Vector3D.Get_Angle(v1, v2);
+
+            //Assert
+            Assert.AreEqual(angle_expected, angle_actual);
+        }
+
+
+        /// <summary>
+        /// Unit test for equality and inequality of two vector
+        /// </summary>
+        [TestMethod]
+
+        public void Test_equality()
+        {
+            //Arrange
+            Vector3D v0 = new Vector3D(1, 2, 3);
+            Vector3D v1 = new Vector3D(1, 2, 3);
+
+            //Act
+            Boolean arequal;
+
+
+            //Assert
+            Assert.IsTrue(v0.Equals(v1));
+
+        }
+
+        [TestMethod]
+
+        public void Test_inequality()
+        {
+            //Arrange
+            Vector3D v0 = new Vector3D(1, 2, 3);
+            Vector3D v1 = new Vector3D(2, 2, 3);
+
+
+            //Act
+            bool result = (v0 == v1);
+
+            //Assert
+            Assert.IsTrue(result);
+        }
+
 
     }
 }

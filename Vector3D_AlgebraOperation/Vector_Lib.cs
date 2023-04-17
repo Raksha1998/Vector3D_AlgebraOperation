@@ -151,6 +151,48 @@ namespace Vector3D_AlgebraOperation
             }
         }
 
+        /// <summary>
+        /// Angle between two vectors
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+
+        public static double Get_Angle(Vector3D a, Vector3D b)
+        {
+            double dot_product = DotProduct(a, b);
+            double magnitude_a = a.Length;
+            double magnitude_b = b.Length;
+            double angle = Math.Acos(dot_product / (magnitude_a * magnitude_b));// angle in radians
+            double degree = angle * 180 / Math.PI;//converting angle fromradians to degree
+
+            return degree;
+        }
+
+        /// <summary>
+        /// Equality and Inequlaity of two vectors
+        /// </summary>
+        /// <param name="v1"></param>
+        /// <param name="v2"></param>
+        /// <returns></returns>
+        public static bool operator ==(Vector3D v1, Vector3D v2)
+        {
+            if (ReferenceEquals(v1, v2))
+                return true;
+
+            return v1.X == v2.X && v1.Y == v2.Y && v1.Z == v2.Z;
+
+        }
+        public static bool operator !=(Vector3D v1, Vector3D v2)
+        {
+            return !(v1 == v2);
+        }
+
+        public override string ToString()
+        {
+            return $"[{X},{Y},{Z}]";
+        }
+
     }
 
 }
