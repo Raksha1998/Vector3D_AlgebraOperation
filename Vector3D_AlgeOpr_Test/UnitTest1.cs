@@ -42,6 +42,9 @@ namespace Vector3D_AlgeOpr_Test
             Assert.AreEqual(v_expected, v_actual);
         }
 
+        /// <summary>
+        /// Unit test for Subtraction of two vector
+        /// </summary>
         [TestMethod]
         public void TestSub()
         {
@@ -56,6 +59,26 @@ namespace Vector3D_AlgeOpr_Test
             //Assert
             Assert.AreEqual(v_expected, v_actual);
         }
+
+
+        /// <summary>
+        /// Unit test for multiplication of a vector with scalar
+        /// </summary>
+        [TestMethod]
+        public void TestMul()
+        {
+            //Arrange
+            Vector3D v_expected = new Vector3D(2, 4, 6);
+
+
+            Vector3D v1 = new Vector3D(1, 2, 3);
+            //Act
+            Vector3D v_actual = Vector3D.ScalarMultiplication(2, v1);
+
+            //Assert
+            Assert.AreEqual(v_expected, v_actual);
+        }
+
 
     }
 }

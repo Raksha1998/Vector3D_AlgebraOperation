@@ -70,6 +70,24 @@ namespace Vector3D_AlgebraOperation
 
         }
 
+        /// <summary>
+        /// Multiplication of a vector with a scalar
+        /// </summary>
+        /// <param name="a_Scalar">scalar input</param>
+        /// <param name="v_vector">vector to be multiplied</param>
+        /// <returns>vector</returns>
+        public static Vector3D ScalarMultiplication(double a, Vector3D v)
+        {
+            double v3_x = v.X * a;
+            double v3_y = v.Y * a;
+            double v3_z = v.Z * a;
+
+            Vector3D v3 = new Vector3D(v3_x, v3_y, v3_z);
+
+            return v3;
+
+        }
+
     }
 
 }
