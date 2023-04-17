@@ -88,6 +88,24 @@ namespace Vector3D_AlgebraOperation
 
         }
 
+        /// <summary>
+        /// Division of a vector by scalar
+        /// </summary>
+        /// <param name="a">scalar input</param>
+        /// <param name="v">vector to be divided by scalar</param>
+        /// <returns>vector</returns>
+        public static Vector3D division(double a, Vector3D v)
+        {
+            double v3_x = v.X / a;
+            double v3_y = v.Y / a;
+            double v3_z = v.Z / a;
+
+            Vector3D v3 = new Vector3D(v3_x, v3_y, v3_z);
+
+            return v3;
+
+        }
+
     }
 
 }

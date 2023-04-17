@@ -79,6 +79,25 @@ namespace Vector3D_AlgeOpr_Test
             Assert.AreEqual(v_expected, v_actual);
         }
 
+        /// <summary>
+        /// Unit test for division of vector by scalar
+        /// </summary>
+
+        [TestMethod]
+        public void TestDiv()
+        {
+            //Arrange
+            Vector3D v_expected = new Vector3D(1, 2, 3);
+
+            Vector3D v1 = new Vector3D(2, 4, 6);
+
+            //Act
+            Vector3D v_actual = Vector3D.division(2, v1);
+
+            //Assert
+            Assert.AreEqual(v_expected, v_actual);
+        }
+
 
     }
 }
