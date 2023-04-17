@@ -34,6 +34,7 @@ namespace Vector3D_AlgeOpr_Test
             Vector3D v_expected = new Vector3D(2, 4, 6);
             Vector3D v0 = new Vector3D(1, 2, 3);
             Vector3D v1 = new Vector3D(1, 2, 3);
+
             //Act
             Vector3D v_actual = Vector3D.addition(v0, v1);
 
@@ -41,6 +42,20 @@ namespace Vector3D_AlgeOpr_Test
             Assert.AreEqual(v_expected, v_actual);
         }
 
+        [TestMethod]
+        public void TestSub()
+        {
+            //Arrange
+            Vector3D v_expected = new Vector3D(0, 0, 0);
+            Vector3D v0 = new Vector3D(1, 2, 3);
+            Vector3D v1 = new Vector3D(1, 2, 3);
+
+            //Act
+            Vector3D v_actual = Vector3D.subtraction(v0, v1);
+
+            //Assert
+            Assert.AreEqual(v_expected, v_actual);
+        }
 
     }
 }

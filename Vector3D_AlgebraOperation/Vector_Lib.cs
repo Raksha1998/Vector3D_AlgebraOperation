@@ -52,6 +52,24 @@ namespace Vector3D_AlgebraOperation
 
         }
 
+        /// <summary>
+        /// Subtraction of 2 vector
+        /// </summary>
+        /// <param name="v1">input vector</param>
+        /// <param name="v2">input vector</param>
+        /// <returns></returns>
+        public static Vector3D subtraction(Vector3D v1, Vector3D v2)
+        {
+            double v3_x = v1.X - v2.X;
+            double v3_y = v1.Y - v2.Y;
+            double v3_z = v1.Z - v2.Z;
+
+            Vector3D v3 = new Vector3D(v3_x, v3_y, v3_z);
+
+            return v3;
+
+        }
+
     }
 
 }
