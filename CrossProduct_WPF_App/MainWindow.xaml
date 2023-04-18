@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CrossProduct_WPF_App"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="600">
+        Title="MainWindow" Height="500" Width="700">
     <Grid>
 
         <Grid.RowDefinitions>
@@ -28,10 +28,10 @@
             <Label FontSize="18" Content="Vector one Input:"/>
             <StackPanel  Orientation="Horizontal">
                 <Label FontSize="16"  Content="X:"/>
-                <TextBox x:Name="x1"  Width="100"/>
+                <TextBox x:Name="x1"  Width="200" VerticalAlignment="Center" FontSize="14" TextChanged="Tbv1x1_TextChanged"/>
 
                 <Label FontSize="16"  Content="Y:"/>
-                <TextBox x:Name="y1"  Width="100"/>
+                <TextBox x:Name="y1"  Width="200"/>
 
                 <Label FontSize="16"  Content="Z:"/>
                 <TextBox x:Name="z1"  Width="100"/>
