@@ -49,10 +49,23 @@ namespace CrossProduct_WPF_App.ViewModel
             }
         }
 
-       
+        //Function to compute cross product
+        private Vector3D ComputeCrossProduct()
+        {
+            return Vector3D.CrossProduct(Vector1, Vector2);//Calling function from Vector library 
+
+        }
+
+        //Button click event directs to this internal function 
+        internal Vector3D Compute()
+        {
+           return ComputeCrossProduct();
+        }
+
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
+       
         private void OnPropertyChanged([CallerMemberName] string? propertyName = null)
         {
             if (PropertyChanged != null)
