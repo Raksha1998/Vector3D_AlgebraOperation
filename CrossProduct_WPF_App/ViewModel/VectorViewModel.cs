@@ -49,6 +49,7 @@ namespace CrossProduct_WPF_App.ViewModel
             }
         }
 
+       
 
         public event PropertyChangedEventHandler? PropertyChanged;
 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CrossProduct_WPF_App"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="700">
+        Title="MainWindow" Height="500" Width="700">
     <Grid>
 
         <Grid.RowDefinitions>
@@ -28,28 +28,28 @@
             <Label FontSize="18" Content="Vector one Input:"/>
             <StackPanel  Orientation="Horizontal">
                 <Label FontSize="16"  Content="X:"/>
-                <TextBox x:Name="x1"  Width="160" VerticalAlignment="Center" FontSize="14"/>
+                <TextBox x:Name="x1" TextChanged="TBv1x_TextChanged"  Width="160" VerticalAlignment="Center" FontSize="14"/>
 
                 <Label FontSize="16"  Content="Y:"/>
-                <TextBox x:Name="y1"  Width="160" VerticalAlignment="Center" FontSize="14"/>
+                <TextBox x:Name="y1" TextChanged="TBv1y_TextChanged"  Width="160" VerticalAlignment="Center" FontSize="14"/>
 
                 <Label FontSize="16"  Content="Z:"/>
-                <TextBox x:Name="z1"  Width="160" VerticalAlignment="Center" FontSize="14"/>
+                <TextBox x:Name="z1"  TextChanged="TBv1z_TextChanged" Width="160" VerticalAlignment="Center" FontSize="14"/>
             </StackPanel>
 
             <Label FontSize="18" Content="Vector two Input:"/>
             <StackPanel Orientation="Horizontal">
                 <Label FontSize="16"  Content="X:"/>
-                <TextBox x:Name="x2" Width="160" VerticalAlignment="Center" FontSize="14"/>
+                <TextBox x:Name="x2" TextChanged="TBv2x_TextChanged" Width="160" VerticalAlignment="Center" FontSize="14"/>
 
                 <Label FontSize="16" Content="Y:"/>
-                <TextBox x:Name="y2"  Width="160" VerticalAlignment="Center" FontSize="14"/>
+                <TextBox x:Name="y2" TextChanged="TBv2y_TextChanged"  Width="160" VerticalAlignment="Center" FontSize="14"/>
 
                 <Label FontSize="16"  Content="Z:"/>
-                <TextBox x:Name="z2"  Width="160" VerticalAlignment="Center" FontSize="14"/>
+                <TextBox x:Name="z2" TextChanged="TBv2z_TextChanged"  Width="160" VerticalAlignment="Center" FontSize="14"/>
             </StackPanel>
             <StackPanel Margin="0 20 300 10" >
-                <Button  Width="250" FontSize="18" Height="40" Content="Compute Cross Product" />
+                <Button  Width="250" FontSize="18" Height="40" Click="Btn_ComputeCrossProd_Click" Content="Compute Cross Product" />
             </StackPanel>
             
 
@@ -58,13 +58,13 @@
             <Label FontSize="18" Content="Output of the resulting Vector:"/>
             <StackPanel Orientation="Horizontal">
                 <Label FontSize="16" Content="X:"/>
-                <TextBox x:Name="x3"  Width="160" VerticalAlignment="Center" FontSize="14" />
+                <TextBox x:Name="x3" TextChanged="TBv3x_TextChanged"  Width="160" VerticalAlignment="Center" FontSize="14" />
 
                 <Label FontSize="16" Content="Y:"/>
-                <TextBox x:Name="y3" Width="160" VerticalAlignment="Center" FontSize="14" />
+                <TextBox x:Name="y3" TextChanged="TBv3y_TextChanged" Width="160" VerticalAlignment="Center" FontSize="14" />
 
                 <Label FontSize="16" Content="Z:"/>
-                <TextBox x:Name="z3" Width="160" VerticalAlignment="Center" FontSize="14"/>
+                <TextBox x:Name="z3" TextChanged="TBv3z_TextChanged" Width="160" VerticalAlignment="Center" FontSize="14"/>
             </StackPanel>
 
         </StackPanel>

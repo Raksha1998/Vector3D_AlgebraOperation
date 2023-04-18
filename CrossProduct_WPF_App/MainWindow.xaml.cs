@@ -35,6 +35,50 @@ namespace CrossProduct_WPF_App
             DataContext = new VectorViewModel();
         }
 
+       
+        private void TBv1x_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            _viewVector1.X = Convert.ToDouble(x1.Text);
+        }
 
+        private void TBv1y_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            _viewVector1.Y = Convert.ToDouble(y1.Text);
+        }
+
+        private void TBv1z_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            _viewVector1.Z = Convert.ToDouble(z1.Text);
+        }
+
+        private void TBv2x_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            _viewVector2.X = Convert.ToDouble(x2.Text);
+        }
+
+        private void TBv2y_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            _viewVector2.Y = Convert.ToDouble(y2.Text);
+        }
+
+        private void TBv2z_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            _viewVector2.Z = Convert.ToDouble(z2.Text);
+        }
+
+        private void TBv3x_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            x3.Text = _view.CrossProduct.X.ToString();
+        }
+
+        private void TBv3y_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            x3.Text = _view.CrossProduct.Y.ToString();
+        }
+
+        private void TBv3z_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            x3.Text = _view.CrossProduct.Z.ToString();
+        }
     }
 }
