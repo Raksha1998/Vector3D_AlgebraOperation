@@ -58,13 +58,13 @@
             <Label FontSize="18" Content="Output of the resulting Vector:"/>
             <StackPanel Orientation="Horizontal">
                 <Label FontSize="16" Content="X:"/>
-                <TextBox x:Name="x3" TextChanged="TBv3x_TextChanged"  Width="160" VerticalAlignment="Center" FontSize="14" />
+                <TextBox x:Name="x3" Width="160" IsReadOnly="True" VerticalAlignment="Center" FontSize="14" />
 
                 <Label FontSize="16" Content="Y:"/>
-                <TextBox x:Name="y3" TextChanged="TBv3y_TextChanged" Width="160" VerticalAlignment="Center" FontSize="14" />
+                <TextBox x:Name="y3" Width="160" IsReadOnly="True" VerticalAlignment="Center" FontSize="14" />
 
                 <Label FontSize="16" Content="Z:"/>
-                <TextBox x:Name="z3" TextChanged="TBv3z_TextChanged" Width="160" VerticalAlignment="Center" FontSize="14"/>
+                <TextBox x:Name="z3" Width="160" IsReadOnly="True" VerticalAlignment="Center" FontSize="14"/>
             </StackPanel>
 
         </StackPanel>

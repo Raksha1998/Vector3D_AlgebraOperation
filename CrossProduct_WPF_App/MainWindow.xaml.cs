@@ -35,11 +35,11 @@ namespace CrossProduct_WPF_App
             DataContext = new VectorViewModel();
         }
 
-/// <summary>
-/// Button click event
-/// </summary>
-/// <param name="sender"></param>
-/// <param name="e"></param>
+    /// <summary>
+    /// Button click event
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
         private void Btn_ComputeCrossProduct_click(object sender, RoutedEventArgs e)
         {
             _view = new VectorViewModel()//get vector 1 and vector values
@@ -91,22 +91,7 @@ namespace CrossProduct_WPF_App
             _viewVector2.Z = Convert.ToDouble(z2.Text);
         }
 
-        //Convert data compute in double precision floating point to string
-        private void TBv3x_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            x3.Text = _view.CrossProduct.X.ToString();
-        }
-
-        private void TBv3y_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            x3.Text = _view.CrossProduct.Y.ToString();
-        }
-
-        private void TBv3z_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            x3.Text = _view.CrossProduct.Z.ToString();
-        }
-
+        
       
     }
 }
