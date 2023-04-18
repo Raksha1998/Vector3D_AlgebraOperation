@@ -5,8 +5,73 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CrossProduct_WPF_App"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="600">
     <Grid>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+
+        <!--Header Control-->
+        <Grid Background="#F05a28">
+            <TextBlock Text="Cross Product Demo" FontSize="30" HorizontalAlignment="Center" Foreground="White"/>
+        </Grid>
+
+        <!--Main View-->
+
+        <StackPanel Grid.Row="2" Margin="20">
+            <Label FontSize="20" Margin="0 0 0 10" Content="Input X, Y, Z Components for two 3D Vectors"/>
+            <Label FontSize="18" Content="Vector one Input:"/>
+            <StackPanel  Orientation="Horizontal">
+                <Label FontSize="16"  Content="X:"/>
+                <TextBox x:Name="x1"  Width="100"/>
+
+                <Label FontSize="16"  Content="Y:"/>
+                <TextBox x:Name="y1"  Width="100"/>
+
+                <Label FontSize="16"  Content="Z:"/>
+                <TextBox x:Name="z1"  Width="100"/>
+            </StackPanel>
+
+            <Label FontSize="18" Content="Vector two Input:"/>
+            <StackPanel Orientation="Horizontal">
+                <Label FontSize="16"  Content="X:"/>
+                <TextBox x:Name="x2" Width="100"/>
+
+                <Label FontSize="16" Content="Y:"/>
+                <TextBox x:Name="y2"  Width="100"/>
+
+                <Label FontSize="16"  Content="Z:"/>
+                <TextBox x:Name="z2"  Width="100"/>
+            </StackPanel>
+            <StackPanel Margin="0 20 200 10" >
+                <Button  Width="250" FontSize="18" Height="40" Content="Compute Cross Product" />
+            </StackPanel>
+            
+
+
+
+            <Label FontSize="18" Content="Output of the resulting Vector:"/>
+            <StackPanel Orientation="Horizontal">
+                <Label FontSize="16" Content="X:"/>
+                <TextBox x:Name="x3"  Width="100" />
+
+                <Label FontSize="16" Content="Y:"/>
+                <TextBox x:Name="y3" Width="100" />
+
+                <Label FontSize="16" Content="Z:"/>
+                <TextBox x:Name="z3" Width="100"/>
+            </StackPanel>
+
+        </StackPanel>
+
+        <!--StatusBar-->
+        <StatusBar Grid.Row="3" >
+            <StatusBarItem FontSize="16" HorizontalAlignment="Center"  Content="  Cross Product of two 3D Vector "/>
+        </StatusBar>
     </Grid>
 </Window>
