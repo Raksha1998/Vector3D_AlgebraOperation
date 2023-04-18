@@ -11,10 +11,12 @@ namespace CrossProduct_WPF_App.ViewModel
 {
     public class VectorViewModel : INotifyPropertyChanged
     {
+        //calling vector3D objects in vectorviewmodel
         private Vector3D _vector1;
         private Vector3D _vector2;
         private Vector3D _CrossProduct;
 
+        //public getter setter to bound them to input controls
         public Vector3D Vector1
         {
             get { return _vector1; }

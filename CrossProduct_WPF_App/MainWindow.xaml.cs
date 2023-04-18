@@ -22,7 +22,7 @@ namespace CrossProduct_WPF_App
     /// </summary>
     public partial class MainWindow : Window
     {
-        //
+        //calling vectorviewmodel and vector3D objects in mainwindow
         private VectorViewModel _view;
         private Vector3D _viewVector1;
         private Vector3D _viewVector2;
@@ -35,12 +35,6 @@ namespace CrossProduct_WPF_App
             DataContext = new VectorViewModel();
         }
 
-        string doublepattern = @"^[0-9]*(?:\.[0-9]*)?$";
 
-        private void Tbv1x1_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            
-            _viewVector1.X = Convert.ToDouble(x1.Text);
-        }
     }
 }
