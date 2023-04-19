@@ -16,13 +16,16 @@ namespace CrossProduct_WPF_App.ViewModel
     {
         //Dictionary to add error to list
         private readonly Dictionary<string, List<string>> _PropertyErrors = new Dictionary<string, List<string>>();
-        string pattern = "^[0-9.]+$";
+
+
+        string pattern = "^[0-9.]+$";// string pattern consists of 0-9 and "."
 
 
         //calling vector3D objects in vectorviewmodel
         private Vector3D _vector1;
         private Vector3D _vector2;
         private Vector3D _CrossProduct;
+
 
         //public getter setter to bound them to input controls
         public Vector3D Vector1
@@ -31,18 +34,18 @@ namespace CrossProduct_WPF_App.ViewModel
             set
             {
                 _vector1 = value;
+
+                /*To check if user entered data other than string pattern. */
                 string input=_vector1.X.ToString();
                 if(input!=pattern)
                 {
-                    AddError(nameof(Vector1),"Input Not Valid");
+                    //AddError(nameof(Vector1),"Input Not Valid");
                 }
 
                 OnPropertyChanged("Vector1");
 
             }
         }
-
-      
 
         public Vector3D Vector2
         {
@@ -54,7 +57,7 @@ namespace CrossProduct_WPF_App.ViewModel
 
             }
         }
-
+        
         public Vector3D CrossProduct
         {
             get { return _CrossProduct; }
@@ -67,7 +70,7 @@ namespace CrossProduct_WPF_App.ViewModel
         }
 
 
-        public bool HasErrors => _PropertyErrors.Any();
+       
 
         //Function to compute cross product
         private Vector3D ComputeCrossProduct()
@@ -82,10 +85,9 @@ namespace CrossProduct_WPF_App.ViewModel
            return ComputeCrossProduct();
         }
 
-
+        //
         public event PropertyChangedEventHandler? PropertyChanged;
-        public event EventHandler<DataErrorsChangedEventArgs>? ErrorsChanged;
-
+        
         private void OnPropertyChanged([CallerMemberName] string? propertyName = null)
         {
             if (PropertyChanged != null)
@@ -98,6 +100,12 @@ namespace CrossProduct_WPF_App.ViewModel
         /// </summary>
         /// <param name="propertyName"></param>
         /// <returns></returns>
+        /// 
+
+        public bool HasErrors => _PropertyErrors.Any();
+
+        public event EventHandler<DataErrorsChangedEventArgs>? ErrorsChanged;
+
         public IEnumerable GetErrors(string? propertyName)
         {
             return _PropertyErrors.GetValueOrDefault(propertyName, null);
