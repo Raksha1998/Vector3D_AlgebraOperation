@@ -42,7 +42,7 @@ namespace CrossProduct_WPF_App
     /// <param name="e"></param>
         private void Btn_ComputeCrossProduct_click(object sender, RoutedEventArgs e)
         {
-            _view = new VectorViewModel()//get vector 1 and vector values
+            _view = new VectorViewModel()//get vector 1 and vector 2 values
             {
                 Vector1 = _viewVector1,
                 Vector2 = _viewVector2

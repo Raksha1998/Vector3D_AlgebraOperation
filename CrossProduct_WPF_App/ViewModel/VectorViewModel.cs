@@ -1,16 +1,24 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Vector3D_AlgebraOperation;
+using System.Text.RegularExpressions;
 
 namespace CrossProduct_WPF_App.ViewModel
 {
-    public class VectorViewModel : INotifyPropertyChanged
+    public class VectorViewModel : INotifyPropertyChanged, INotifyDataErrorInfo
     {
+        //Dictionary to add error to list
+        private readonly Dictionary<string, List<string>> _PropertyErrors = new Dictionary<string, List<string>>();
+        string pattern = "^[0-9.]+$";
+
+
         //calling vector3D objects in vectorviewmodel
         private Vector3D _vector1;
         private Vector3D _vector2;
@@ -23,10 +31,19 @@ namespace CrossProduct_WPF_App.ViewModel
             set
             {
                 _vector1 = value;
+                string input=_vector1.X.ToString();
+                if(input!=pattern)
+                {
+                    AddError(nameof(Vector1),"Input Not Valid");
+                }
+
                 OnPropertyChanged("Vector1");
 
             }
         }
+
+      
+
         public Vector3D Vector2
         {
             get { return _vector2; }
@@ -49,6 +66,9 @@ namespace CrossProduct_WPF_App.ViewModel
             }
         }
 
+
+        public bool HasErrors => _PropertyErrors.Any();
+
         //Function to compute cross product
         private Vector3D ComputeCrossProduct()
         {
@@ -64,12 +84,39 @@ namespace CrossProduct_WPF_App.ViewModel
 
 
         public event PropertyChangedEventHandler? PropertyChanged;
+        public event EventHandler<DataErrorsChangedEventArgs>? ErrorsChanged;
 
-       
         private void OnPropertyChanged([CallerMemberName] string? propertyName = null)
         {
             if (PropertyChanged != null)
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+
+        /// <summary>
+        /// Data Validation code
+        /// </summary>
+        /// <param name="propertyName"></param>
+        /// <returns></returns>
+        public IEnumerable GetErrors(string? propertyName)
+        {
+            return _PropertyErrors.GetValueOrDefault(propertyName, null);
+        }
+
+        private void AddError(string PropertyName, string errorMessage)
+        {
+            if (!_PropertyErrors.ContainsKey(PropertyName))
+            {
+                _PropertyErrors.Add(errorMessage, new List<string>());
+            }
+
+            _PropertyErrors[PropertyName].Add(errorMessage);
+            OnErrorsChanged(PropertyName);
+        }
+
+        private void OnErrorsChanged(string propertyName)
+        {
+            ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(propertyName));
         }
     }
 }
