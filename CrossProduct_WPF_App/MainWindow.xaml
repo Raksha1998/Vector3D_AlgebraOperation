@@ -7,20 +7,7 @@
         xmlns:ViewModel="clr-namespace:CrossProduct_WPF_App.ViewModel" x:Class="CrossProduct_WPF_App.MainWindow"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="700">
-    <Window.Resources>
-        
-        <Style TargetType="TextBox">
-            <Style.Triggers>
-            <Trigger Property="Validation.HasError" Value="True">
-                <Setter Property="Background" Value="Red"/>
-                <Setter Property="Margin" Value="0 0 0 20"/>
-                <Setter Property="ToolTip"
-                Value="{Binding RelativeSource={RelativeSource Self},
-                        Path=(Validation.Errors)[0].ErrorContent}"/>
-            </Trigger>
-            </Style.Triggers>
-        </Style>
-    </Window.Resources>
+   
     <Window.DataContext>
         <ViewModel:VectorViewModel/>
     </Window.DataContext>
@@ -47,7 +34,7 @@
             <Label FontSize="18" Content="Vector one Input:"/>
             <StackPanel  Orientation="Horizontal">
                 <Label FontSize="16"  Content="X:"/>
-                <TextBox x:Name="x1" Text="{Binding Path=Vector1.X, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" TextChanged="TBv1x_TextChanged"  Width="160" VerticalAlignment="Center" FontSize="14"/>
+                <TextBox x:Name="x1" TextChanged="TBv1x_TextChanged" PreviewTextInput="NumberValidationx1"  Width="160" VerticalAlignment="Center" FontSize="14"/>
 
                 <Label FontSize="16"  Content="Y:"/>
                 <TextBox x:Name="y1" TextChanged="TBv1y_TextChanged"  Width="160" VerticalAlignment="Center" FontSize="14"/>

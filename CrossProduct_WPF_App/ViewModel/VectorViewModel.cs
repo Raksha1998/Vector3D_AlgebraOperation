@@ -41,17 +41,7 @@ namespace CrossProduct_WPF_App.ViewModel
             get { return _vector1; }
             set
             {
-                //Data Validation condition to check if input is valid
-                string input=_vector1.X.ToString();
-                if(input==pattern)
-                {
-                    _vector1 = value;//if valid set the value to vector
-                }
-                else
-                {
-                    AddError(nameof(Vector1), "Invalid Input");//show error message as invalid
-                }
-
+                _vector1 = value;
                 OnPropertyChanged("Vector1");
 
             }
