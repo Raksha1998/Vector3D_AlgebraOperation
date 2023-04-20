@@ -191,6 +191,7 @@ namespace Vector3D_AlgeOpr_Test
 
         }
 
+      
         [TestMethod]
 
         public void Test_inequality()

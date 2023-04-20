@@ -13,7 +13,7 @@ namespace Vector3D_AlgebraOperation
     /// <summary>
     /// Representation of 3D Vector
     /// </summary>
-    public struct Vector3D
+    public class Vector3D
     {
         //Components of 3D Vector
         public double X { get; set; }
