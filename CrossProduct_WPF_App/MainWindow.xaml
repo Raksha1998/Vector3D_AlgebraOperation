@@ -34,7 +34,7 @@
             <Label FontSize="18" Content="Vector one Input:"/>
             <StackPanel  Orientation="Horizontal">
                 <Label FontSize="16"  Content="X:"/>
-                <TextBox x:Name="x1" Text="{Binding Path=Vector1.X}" TextChanged="TBv1x_TextChanged"  Width="160" VerticalAlignment="Center" FontSize="14"/>
+                <TextBox x:Name="x1" Text="{Binding Path=Vector1.X, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" TextChanged="TBv1x_TextChanged"  Width="160" VerticalAlignment="Center" FontSize="14"/>
 
                 <Label FontSize="16"  Content="Y:"/>
                 <TextBox x:Name="y1" TextChanged="TBv1y_TextChanged"  Width="160" VerticalAlignment="Center" FontSize="14"/>
