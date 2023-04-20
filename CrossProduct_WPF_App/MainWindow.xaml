@@ -34,25 +34,25 @@
             <Label FontSize="18" Content="Vector one Input:"/>
             <StackPanel  Orientation="Horizontal">
                 <Label FontSize="16"  Content="X:"/>
-                <TextBox x:Name="x1" TextChanged="TBv1x_TextChanged" PreviewTextInput="NumberValidationx1"  Width="160" VerticalAlignment="Center" FontSize="14"/>
+                <TextBox x:Name="x1" TextChanged="TBv1x_TextChanged" PreviewTextInput="NumberValidation"  Width="160" VerticalAlignment="Center" FontSize="14"/>
 
                 <Label FontSize="16"  Content="Y:"/>
-                <TextBox x:Name="y1" TextChanged="TBv1y_TextChanged"  Width="160" VerticalAlignment="Center" FontSize="14"/>
+                <TextBox x:Name="y1" TextChanged="TBv1y_TextChanged" PreviewTextInput="NumberValidation"  Width="160" VerticalAlignment="Center" FontSize="14"/>
 
                 <Label FontSize="16"  Content="Z:"/>
-                <TextBox x:Name="z1"  TextChanged="TBv1z_TextChanged" Width="160" VerticalAlignment="Center" FontSize="14"/>
+                <TextBox x:Name="z1"  TextChanged="TBv1z_TextChanged" PreviewTextInput="NumberValidation" Width="160" VerticalAlignment="Center" FontSize="14"/>
             </StackPanel>
 
             <Label FontSize="18" Content="Vector two Input:"/>
             <StackPanel Orientation="Horizontal">
                 <Label FontSize="16"  Content="X:"/>
-                <TextBox x:Name="x2" TextChanged="TBv2x_TextChanged" Width="160" VerticalAlignment="Center" FontSize="14"/>
+                <TextBox x:Name="x2" TextChanged="TBv2x_TextChanged" PreviewTextInput="NumberValidation" Width="160" VerticalAlignment="Center" FontSize="14"/>
 
                 <Label FontSize="16" Content="Y:"/>
-                <TextBox x:Name="y2" TextChanged="TBv2y_TextChanged"  Width="160" VerticalAlignment="Center" FontSize="14"/>
+                <TextBox x:Name="y2" TextChanged="TBv2y_TextChanged" PreviewTextInput="NumberValidation"  Width="160" VerticalAlignment="Center" FontSize="14"/>
 
                 <Label FontSize="16"  Content="Z:"/>
-                <TextBox x:Name="z2" TextChanged="TBv2z_TextChanged"  Width="160" VerticalAlignment="Center" FontSize="14"/>
+                <TextBox x:Name="z2" TextChanged="TBv2z_TextChanged" PreviewTextInput="NumberValidation"  Width="160" VerticalAlignment="Center" FontSize="14"/>
             </StackPanel>
             <StackPanel Margin="20" HorizontalAlignment="Left"  >
                 <Button  Width="250" FontSize="18" Height="40" Click="Btn_ComputeCrossProduct_click" Content="Compute Cross Product" />

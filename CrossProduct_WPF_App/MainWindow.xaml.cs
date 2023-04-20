@@ -28,7 +28,7 @@ namespace CrossProduct_WPF_App
         private Vector3D _viewVector1;
         private Vector3D _viewVector2;
 
-        string pattern = "^[0-9.]+$";// string pattern consists of 0-9 and "."
+        Regex reg = new Regex("[^0-9]+");// string pattern consists of 0-9 and "."
         public MainWindow()
         {
             InitializeComponent();
@@ -67,18 +67,7 @@ namespace CrossProduct_WPF_App
         //Convert data entered by user in string to Double
         private void TBv1x_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string input = x1.Text.ToString();
-            //Condition to check if user entered valid input
-            if (Regex.IsMatch(input, pattern))
-            {
-                _viewVector1.X = Convert.ToDouble(x1.Text);
-            }
-            else
-            {
-                x1.Text = "";
-                MessageBox.Show("Invalid Input, Please Enter Valid Number");
-                return;
-            }
+            _viewVector1.X = Convert.ToDouble(x1.Text);
         }
 
         private void TBv1y_TextChanged(object sender, TextChangedEventArgs e)
@@ -106,10 +95,12 @@ namespace CrossProduct_WPF_App
             _viewVector2.Z = Convert.ToDouble(z2.Text);
         }
 
-        private void NumberValidationx1(object sender, TextCompositionEventArgs e)
-        {
-            Regex reg = new Regex("[^0-9]+");
+        //Validation to make sure no alphabets allowed
+        private void NumberValidation(object sender, TextCompositionEventArgs e)
+        {           
             e.Handled = reg.IsMatch(e.Text);
         }
+
+
     }
 }
