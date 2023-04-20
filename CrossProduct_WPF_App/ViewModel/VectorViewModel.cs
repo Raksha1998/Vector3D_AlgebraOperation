@@ -26,20 +26,30 @@ namespace CrossProduct_WPF_App.ViewModel
         private Vector3D _vector2;
         private Vector3D _CrossProduct;
 
+        //private double vector1_x;
+
+        public VectorViewModel()
+        {
+            _vector1 = new Vector3D();
+            _vector2 = new Vector3D();
+            _CrossProduct=new Vector3D();
+        }
 
         //public getter setter to bound them to input controls
         public Vector3D Vector1
-        {
+        {           
             get { return _vector1; }
             set
             {
-                _vector1 = value;
-
-                /*To check if user entered data other than string pattern. */
+                //Data Validation condition to check if input is valid
                 string input=_vector1.X.ToString();
-                if(input!=pattern)
+                if(input==pattern)
                 {
-                    //AddError(nameof(Vector1),"Input Not Valid");
+                    _vector1 = value;//if valid set the value to vector
+                }
+                else
+                {
+                    AddError(nameof(Vector1), "Invalid Input");//show error message as invalid
                 }
 
                 OnPropertyChanged("Vector1");

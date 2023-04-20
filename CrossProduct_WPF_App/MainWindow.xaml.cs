@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,6 +28,7 @@ namespace CrossProduct_WPF_App
         private Vector3D _viewVector1;
         private Vector3D _viewVector2;
 
+        string pattern = "^[0-9.]+$";// string pattern consists of 0-9 and "."
         public MainWindow()
         {
             InitializeComponent();
@@ -35,18 +37,20 @@ namespace CrossProduct_WPF_App
             DataContext = new VectorViewModel();
         }
 
-    /// <summary>
-    /// Button click event
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
+        /// <summary>
+        /// Button click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_ComputeCrossProduct_click(object sender, RoutedEventArgs e)
         {
+
             _view = new VectorViewModel()//get vector 1 and vector 2 values
             {
                 Vector1 = _viewVector1,
                 Vector2 = _viewVector2
             };
+
             if (_view != null)
             {
                 _view.CrossProduct = _view.Compute(); // compute and store it to resulting vector
@@ -91,7 +95,6 @@ namespace CrossProduct_WPF_App
             _viewVector2.Z = Convert.ToDouble(z2.Text);
         }
 
-        
-      
+
     }
 }
