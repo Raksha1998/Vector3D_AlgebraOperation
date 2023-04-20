@@ -183,11 +183,11 @@ namespace Vector3D_AlgeOpr_Test
             Vector3D v1 = new Vector3D(1, 2, 3);
 
             //Act
-            Boolean arequal;
+            Boolean arequal = v0 == v1;
 
 
             //Assert
-            Assert.IsTrue(v0.Equals(v1));
+            Assert.IsTrue(arequal);
 
         }
 
@@ -201,7 +201,7 @@ namespace Vector3D_AlgeOpr_Test
 
 
             //Act
-            bool result = (v0 == v1);
+            bool result = (v0 != v1);
 
             //Assert
             Assert.IsTrue(result);
