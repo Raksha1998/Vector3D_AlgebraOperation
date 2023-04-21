@@ -13,7 +13,7 @@ namespace Vector3D_AlgebraOperation
     /// <summary>
     /// Representation of 3D Vector
     /// </summary>
-    public class Vector3D
+    public struct Vector3D
     {
         //Components of 3D Vector
         public double X { get; set; }
@@ -175,6 +175,9 @@ namespace Vector3D_AlgebraOperation
         /// <param name="v1"></param>
         /// <param name="v2"></param>
         /// <returns></returns>
+        /// 
+
+        //Operator overload to check equality and inequality 
         public static bool operator ==(Vector3D v1, Vector3D v2)
         {
             if (ReferenceEquals(v1, v2))
